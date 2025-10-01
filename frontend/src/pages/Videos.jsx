@@ -204,14 +204,32 @@ const Videos = () => {
                       </div>
                     </div>
 
-                    {/* Action Button */}
-                    <Button 
-                      className="w-full bg-green-500 hover:bg-green-600"
-                      onClick={() => window.open(selectedVideo.url, '_blank')}
-                    >
-                      <Play className="h-4 w-4 mr-2" />
-                      Videoyu İzle
-                    </Button>
+                    {/* Action Buttons */}
+                    <div className="flex space-x-2">
+                      <Button 
+                        className="flex-1 bg-red-600 hover:bg-red-700"
+                        onClick={() => window.open(selectedVideo.url, '_blank')}
+                      >
+                        <Play className="h-4 w-4 mr-2" />
+                        YouTube'da Aç
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        className="flex-1"
+                        onClick={() => {
+                          if (navigator.share) {
+                            navigator.share({
+                              title: selectedVideo.title,
+                              url: selectedVideo.url
+                            });
+                          } else {
+                            navigator.clipboard.writeText(selectedVideo.url);
+                          }
+                        }}
+                      >
+                        Paylaş
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               ) : (
