@@ -174,7 +174,7 @@ const Quiz = () => {
                     <RotateCcw className="h-4 w-4 mr-2" />
                     Tekrar Çöz
                   </Button>
-                  <Button variant="outline">
+                  <Button variant="outline" onClick={handleTopicReview}>
                     <BookOpen className="h-4 w-4 mr-2" />
                     Konuları Tekrar Et
                   </Button>
