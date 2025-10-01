@@ -91,6 +91,9 @@ const Videos = () => {
                         <Play className="h-8 w-8 text-gray-800 ml-1" />
                       </div>
                     </div>
+                    <div className="absolute top-3 left-3 bg-red-600 text-white text-xs px-2 py-1 rounded font-medium">
+                      {video.channel}
+                    </div>
                     <div className="absolute top-3 right-3">
                       <Badge className={getDifficultyColor(video.difficulty)}>
                         {video.difficulty}
