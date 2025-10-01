@@ -9,6 +9,7 @@ import { quizQuestions } from '../data/mockData';
 import { useNavigate } from 'react-router-dom';
 
 const Quiz = () => {
+  const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
@@ -16,6 +17,7 @@ const Quiz = () => {
   const [timeLeft, setTimeLeft] = useState(30);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [answers, setAnswers] = useState([]);
+  const [showTopicReview, setShowTopicReview] = useState(false);
 
   useEffect(() => {
     let timer;
