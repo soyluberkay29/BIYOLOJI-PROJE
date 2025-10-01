@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, RotateCcw, Trophy, Clock, BookOpen, ArrowRight } from 'lucide-react';
+import { CheckCircle, XCircle, RotateCcw, Trophy, Clock, BookOpen, ArrowRight, ExternalLink, Target } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Progress } from '../components/ui/progress';
 import { Badge } from '../components/ui/badge';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import { quizQuestions } from '../data/mockData';
+import { useNavigate } from 'react-router-dom';
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
