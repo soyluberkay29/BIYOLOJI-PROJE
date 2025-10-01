@@ -183,6 +183,108 @@ const Quiz = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Konu Tekrarı Modal */}
+        <Dialog open={showTopicReview} onOpenChange={setShowTopicReview}>
+          <DialogContent className="max-w-2xl">
+            <DialogHeader>
+              <DialogTitle className="flex items-center space-x-2">
+                <Target className="h-5 w-5 text-orange-500" />
+                <span>Konu Tekrarı Önerileri</span>
+              </DialogTitle>
+              <DialogDescription>
+                Yanlış cevapladığınız sorulara göre tekrar etmeniz gereken konular
+              </DialogDescription>
+            </DialogHeader>
+            
+            <div className="space-y-4">
+              {getWrongTopics().length > 0 ? (
+                <>
+                  <div className="text-sm text-gray-600 mb-4">
+                    Bu konuları tekrar ettiğinizde bir sonraki quizde daha başarılı olacaksınız!
+                  </div>
+                  
+                  {getWrongTopics().map((topic, index) => (
+                    <Card key={index} className="border-l-4 border-l-orange-400">
+                      <CardContent className="p-4">
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-800 mb-1">
+                              {topic.page.title}
+                            </h4>
+                            <p className="text-sm text-gray-600 mb-3">
+                              {topic.page.description}
+                            </p>
+                            <p className="text-xs text-gray-500 bg-gray-50 p-2 rounded">
+                              <strong>Açıklama:</strong> {topic.explanation}
+                            </p>
+                          </div>
+                          <Button 
+                            size="sm" 
+                            className="ml-4 bg-orange-500 hover:bg-orange-600"
+                            onClick={() => {
+                              setShowTopicReview(false);
+                              navigate(topic.page.path);
+                            }}
+                          >
+                            <ExternalLink className="h-4 w-4 mr-1" />
+                            Konuya Git
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                  
+                  <div className="flex justify-between pt-4 border-t">
+                    <Button 
+                      variant="outline" 
+                      onClick={() => setShowTopicReview(false)}
+                    >
+                      Kapat
+                    </Button>
+                    <Button 
+                      onClick={() => {
+                        setShowTopicReview(false);
+                        navigate('/process');
+                      }}
+                      className="bg-green-500 hover:bg-green-600"
+                    >
+                      <BookOpen className="h-4 w-4 mr-2" />
+                      Genel Tekrara Git
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-8">
+                  <Trophy className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-green-600 mb-2">
+                    Tebrikler! Mükemmel Performans
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Tüm soruları doğru cevapladınız. Konuları çok iyi biliyorsunuz!
+                  </p>
+                  <div className="flex justify-center space-x-3">
+                    <Button 
+                      variant="outline" 
+                      onClick={() => setShowTopicReview(false)}
+                    >
+                      Kapat
+                    </Button>
+                    <Button 
+                      onClick={() => {
+                        setShowTopicReview(false);
+                        navigate('/videos');
+                      }}
+                      className="bg-blue-500 hover:bg-blue-600"
+                    >
+                      İleri Seviye Videolar
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
