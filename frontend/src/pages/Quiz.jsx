@@ -86,6 +86,45 @@ const Quiz = () => {
     return 'text-red-600';
   };
 
+  // Konu eşleştirmeleri - hangi topic hangi sayfaya gidiyor
+  const topicPageMap = {
+    'organeller': { path: '/molecules', title: 'Molekül Modelleri', description: 'Kloroplast yapısı ve organeller' },
+    'calvin-cycle': { path: '/process', title: 'Fotosentez Süreci', description: 'Calvin döngüsü ve karanlık reaksiyonları' },
+    'enzymes': { path: '/reactions', title: 'Reaksiyonlar', description: 'RuBisCO enzimi ve kataliz' },
+    'light-reactions': { path: '/reactions', title: 'Işık Reaksiyonları', description: 'Fotosistem I & II, ATP üretimi' },
+    'pigments': { path: '/molecules', title: 'Klorofil ve Pigmentler', description: 'Işık yakalama molekülleri' }
+  };
+
+  // Yanlış yapılan soruların konularını analiz et
+  const getWrongTopics = () => {
+    const wrongAnswers = answers.filter(answer => !answer.isCorrect);
+    const wrongTopics = wrongAnswers.map((answer, index) => {
+      const questionIndex = answers.indexOf(answer);
+      const question = quizQuestions[questionIndex];
+      return {
+        topic: question.topic,
+        question: question.question,
+        explanation: question.explanation,
+        page: topicPageMap[question.topic] || { path: '/process', title: 'Genel Tekrar', description: 'Fotosentez genel konuları' }
+      };
+    });
+    
+    // Benzersiz konuları groupla
+    const uniqueTopics = wrongTopics.reduce((acc, curr) => {
+      const existing = acc.find(item => item.topic === curr.topic);
+      if (!existing) {
+        acc.push(curr);
+      }
+      return acc;
+    }, []);
+    
+    return uniqueTopics;
+  };
+
+  const handleTopicReview = () => {
+    setShowTopicReview(true);
+  };
+
   if (quizCompleted) {
     const percentage = Math.round((score / quizQuestions.length) * 100);
     
