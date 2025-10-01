@@ -175,13 +175,20 @@ const Videos = () => {
                       <h3 className="font-semibold text-gray-800 mb-2">{selectedVideo.title}</h3>
                       <p className="text-sm text-gray-600 mb-3">{selectedVideo.description}</p>
                       
-                      <div className="flex items-center justify-between mb-4">
-                        <Badge className={getDifficultyColor(selectedVideo.difficulty)}>
-                          {selectedVideo.difficulty}
-                        </Badge>
-                        <div className="flex items-center text-sm text-gray-600">
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <Badge className={getDifficultyColor(selectedVideo.difficulty)}>
+                            {selectedVideo.difficulty}
+                          </Badge>
+                        </div>
+                        <div className="flex items-center text-sm text-gray-600 justify-end">
                           <Clock className="h-4 w-4 mr-1" />
                           {selectedVideo.duration}
+                        </div>
+                        <div className="col-span-2">
+                          <p className="text-sm text-gray-500 mb-2">
+                            📺 Kanal: <span className="font-medium text-red-600">{selectedVideo.channel}</span>
+                          </p>
                         </div>
                       </div>
 
