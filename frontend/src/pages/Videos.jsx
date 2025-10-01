@@ -153,22 +153,18 @@ const Videos = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    {/* Video Player Placeholder */}
+                    {/* YouTube Video Player */}
                     <div className="relative bg-gray-900 rounded-lg overflow-hidden">
-                      <img
-                        src={selectedVideo.thumbnail}
-                        alt={selectedVideo.title}
-                        className="w-full h-48 object-cover opacity-70"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Button 
-                          size="lg"
-                          className="bg-green-500 hover:bg-green-600 rounded-full w-16 h-16 p-0"
-                          onClick={() => window.open(selectedVideo.url, '_blank')}
-                        >
-                          <Play className="h-8 w-8 ml-1" />
-                        </Button>
-                      </div>
+                      <iframe
+                        width="100%"
+                        height="200"
+                        src={`https://www.youtube.com/embed/${selectedVideo.embedId}?rel=0&modestbranding=1&showinfo=0`}
+                        title={selectedVideo.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="w-full h-48 rounded"
+                      ></iframe>
                     </div>
 
                     {/* Video Info */}
