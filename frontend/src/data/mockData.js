@@ -270,33 +270,75 @@ export const calculationTools = [
 export const educationalVideos = [
   {
     id: 1,
-    title: "Fotosenteze Giriş",
-    description: "Fotosentezin temel prensipleri ve önemi",
-    duration: "8:45",
+    title: "Fotosentez - 10. Sınıf Biyoloji",
+    description: "Fotosentezin temel prensipleri, ışık ve karanlık reaksiyonları detaylı anlatım",
+    duration: "23:45",
     difficulty: "Başlangıç",
-    topics: ["Fotosentez tanımı", "Genel denklem", "Önem"],
-    thumbnail: "https://images.unsplash.com/photo-1416816901131-9e5eab64c1c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxwbGFudCUyMHNjaWVuY2V8ZW58MHx8fGdyZWVufDE3NTkzMzk5MjJ8MA&ixlib=rb-4.1.0&q=85",
-    url: "#video1"
+    topics: ["Fotosentez tanımı", "Genel denklem", "Kloroplast yapısı", "Temel süreçler"],
+    thumbnail: "https://img.youtube.com/vi/LXg1Y79ZLEQ/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=LXg1Y79ZLEQ",
+    embedId: "LXg1Y79ZLEQ",
+    channel: "Selin Hoca"
   },
   {
     id: 2,
-    title: "Işık Reaksiyonları Detayı",
-    description: "Tilakoidlerde gerçekleşen ışık bağımlı reaksiyonlar",
-    duration: "12:30",
+    title: "Fotosentez - Khan Academy Türkiye",
+    description: "Işık reaksiyonları, ATP üretimi ve elektronların yolculuğu",
+    duration: "8:32",
     difficulty: "Orta",
-    topics: ["Fotosistem I & II", "Elektron taşıma", "ATP sentezi"],
-    thumbnail: "https://images.unsplash.com/photo-1540927550647-43699cb14916?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxwaG90b3N5bnRoZXNpc3xlbnwwfHx8Z3JlZW58MTc1OTMzOTkxNXww&ixlib=rb-4.1.0&q=85",
-    url: "#video2"
+    topics: ["Fotosistem I & II", "Elektron taşıma", "ATP sentezi", "NADPH üretimi"],
+    thumbnail: "https://img.youtube.com/vi/W9bWQswEWeY/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=W9bWQswEWeY",
+    embedId: "W9bWQswEWeY",
+    channel: "Khan Academy Türkiye"
   },
   {
     id: 3,
-    title: "Calvin Döngüsü Animasyonu",
-    description: "Karbon fiksasyonu ve şeker üretim süreci",
-    duration: "10:15",
+    title: "Fotosentez Detaylı Anlatım",
+    description: "Karbon fiksasyonu, Calvin döngüsü ve moleküler mekanizmalar",
+    duration: "15:20",
     difficulty: "İleri",
-    topics: ["RuBisCO enzimi", "Karbon fiksasyonu", "Glukoz sentezi"],
-    thumbnail: "https://images.unsplash.com/photo-1526797072-6f5b4aec8421?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxwaG90b3N5bnRoZXNpc3xlbnwwfHx8Z3JlZW58MTc1OTMzOTkxNXww&ixlib=rb-4.1.0&q=85",
-    url: "#video3"
+    topics: ["RuBisCO enzimi", "Calvin döngüsü", "Glukoz sentezi", "Karbon fiksasyonu"],
+    thumbnail: "https://img.youtube.com/vi/uGp6LxAfIh0/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=uGp6LxAfIh0",
+    embedId: "uGp6LxAfIh0",
+    channel: "Biyoloji Dersleri"
+  },
+  {
+    id: 4,
+    title: "Fotosentez - Görsel Anlatım",
+    description: "Animasyonlu fotosentez süreci, molekül hareketleri ve enerji dönüşümleri",
+    duration: "11:45",
+    difficulty: "Orta",
+    topics: ["Moleküler animasyon", "Enerji dönüşümü", "Tilakoid yapısı"],
+    thumbnail: "https://img.youtube.com/vi/axxwm4LroRo/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=axxwm4LroRo",
+    embedId: "axxwm4LroRo",
+    channel: "Bilim Videoları"
+  },
+  {
+    id: 5,
+    title: "Klorofil ve Pigmentler",
+    description: "Işık yakalama, pigment çeşitleri ve fotosistem yapıları",
+    duration: "9:18",
+    difficulty: "İleri",
+    topics: ["Klorofil türleri", "Pigment spektrumu", "Fotosistem yapısı"],
+    thumbnail: "https://img.youtube.com/vi/r4vrh9Qp8OM/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=r4vrh9Qp8OM",
+    embedId: "r4vrh9Qp8OM",
+    channel: "Eğitim TV"
+  },
+  {
+    id: 6,
+    title: "Fotosentez Soru Çözümleri",
+    description: "10. sınıf fotosentez konusu soru çözümleri ve örnekler",
+    duration: "18:30",
+    difficulty: "Orta",
+    topics: ["Soru çözümü", "Örnek problemler", "Sınav hazırlığı"],
+    thumbnail: "https://img.youtube.com/vi/EKGRs8q7HlA/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=EKGRs8q7HlA",
+    embedId: "EKGRs8q7HlA",
+    channel: "Matematik Rehberi"
   }
 ];
 
